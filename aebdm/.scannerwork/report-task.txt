@@ -1,0 +1,6 @@
+projectKey=chi
+serverUrl=http://localhost:9000
+serverVersion=25.12.0.117093
+dashboardUrl=http://localhost:9000/dashboard?id=chi
+ceTaskId=bb17a0c6-7472-423a-93d3-5d3fb7140c35
+ceTaskUrl=http://localhost:9000/api/ce/task?id=bb17a0c6-7472-423a-93d3-5d3fb7140c35
