@@ -1,0 +1,198 @@
+/* ═══════════════════════════════════════════════════════════════════════════════
+   DARK MODE SUPPORT - Light Mode by Default
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  /* Colors - Brand */
+  --color-gray-light: #ADB5BD;
+  --color-black: #000000;
+  --color-white: #FFFFFF;
+  --color-gray-bg: #E5E5E5;
+  --color-mauve: #240046;
+  --color-blue: #10002B;
+
+  /* Light Mode (Default) */
+  --bg-light: #FFFFFF;
+  --bg-light-secondary: #F5F5F5;
+  --text-dark: #000000;
+  --text-light: #666666;
+  --border-light: #E5E5E5;
+  --surface-light: #FFFFFF;
+}
+
+/* Dark Mode */
+html[data-theme="dark"] {
+  --bg-light: #1a1a1a;
+  --bg-light-secondary: #262626;
+  --text-dark: #FFFFFF;
+  --text-light: #AAAAAA;
+  --border-light: #333333;
+  --surface-light: #222222;
+}
+
+body {
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.theme-toggle-wrap {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 8px;
+}
+
+.theme-toggle-floating-wrap {
+  position: fixed;
+  right: 14px;
+  bottom: 14px;
+  z-index: 1200;
+  background: var(--surface-light);
+  border: 1px solid var(--border-light);
+  border-radius: 999px;
+  padding: 4px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  position: relative;
+  width: 50px;
+  height: 28px;
+  background: var(--border-light);
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 2px;
+  transition: background-color 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background: var(--color-mauve);
+}
+
+.theme-toggle-circle {
+  width: 24px;
+  height: 24px;
+  background: var(--surface-light);
+  border-radius: 50%;
+  position: absolute;
+  left: 2px;
+  transition: left 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.theme-toggle.dark .theme-toggle-circle {
+  left: 24px;
+}
+
+.theme-toggle-circle i {
+  color: var(--color-mauve);
+}
+
+/* Apply Dark Mode to all interactive elements */
+html[data-theme="dark"] input,
+html[data-theme="dark"] select,
+html[data-theme="dark"] textarea,
+html[data-theme="dark"] .form-control {
+  background-color: var(--bg-light-secondary);
+  color: var(--text-dark);
+  border-color: var(--border-light);
+}
+
+html[data-theme="dark"] input:focus,
+html[data-theme="dark"] select:focus,
+html[data-theme="dark"] textarea:focus,
+html[data-theme="dark"] .form-control:focus {
+  border-color: var(--color-mauve);
+}
+
+html[data-theme="dark"] .card,
+html[data-theme="dark"] .modal-content,
+html[data-theme="dark"] .table-wrap,
+html[data-theme="dark"] .sidebar {
+  background-color: var(--bg-light-secondary);
+  border-color: var(--border-light);
+}
+
+html[data-theme="dark"] table {
+  background-color: var(--bg-light-secondary);
+  color: var(--text-dark);
+}
+
+html[data-theme="dark"] table th {
+  background-color: var(--color-blue) !important;
+  color: white !important;
+}
+
+html[data-theme="dark"] table td {
+  background-color: var(--bg-light-secondary);
+  color: var(--text-dark);
+  border-color: var(--border-light);
+}
+
+html[data-theme="dark"] .notif-dropdown {
+  background: var(--bg-light-secondary);
+  border: 1px solid var(--border-light);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.45);
+}
+
+html[data-theme="dark"] .notif-header {
+  background: #10002B;
+  color: #FFFFFF;
+  border-bottom: 1px solid var(--border-light);
+}
+
+html[data-theme="dark"] .notif-item.is-unread {
+  background: rgba(173, 181, 189, 0.12);
+  border-left-color: #ADB5BD;
+}
+
+html[data-theme="dark"] .notif-content p,
+html[data-theme="dark"] .notif-date,
+html[data-theme="dark"] .empty-notif {
+  color: #FFFFFF;
+}
+
+html[data-theme="dark"] .modal {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+html[data-theme="dark"] .badge {
+  background-color: var(--color-mauve);
+}
+
+html[data-theme="dark"] .btn-secondary,
+html[data-theme="dark"] .notif-item {
+  background-color: var(--bg-light-secondary);
+  color: var(--text-dark);
+  border-color: var(--border-light);
+}
+
+/* Mobile responsive theme toggle */
+@media (max-width: 767px) {
+  .theme-toggle-floating-wrap {
+    right: 10px;
+    bottom: 10px;
+  }
+
+  .theme-toggle {
+    width: 45px;
+    height: 26px;
+  }
+
+  .theme-toggle-circle {
+    width: 22px;
+    height: 22px;
+    font-size: 11px;
+  }
+
+  .theme-toggle.dark .theme-toggle-circle {
+    left: 21px;
+  }
+}

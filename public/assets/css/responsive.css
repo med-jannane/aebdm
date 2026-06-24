@@ -1,0 +1,132 @@
+/* Responsive layer variables matching style.css */
+:root {
+  --color-mauve: #8D76FF;
+  --color-blue: #76B4FF;
+  --color-white: #FFFFFF;
+  --color-gray-dark: #1D1D1F;
+  --color-gray-light: #515154;
+  --color-bg: #F4F4F6;
+}
+
+/* Desktop comfort */
+@media (min-width: 1200px) {
+  .page-content {
+    width: min(100%, 1500px);
+    margin-inline: auto;
+  }
+}
+
+/* Admin/Director dashboard tuning */
+@media (max-width: 1200px) {
+  .kpi-grid-admin {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 980px) {
+  .kpi-grid-admin,
+  .module-grid,
+  .chart-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .chart-span-two {
+    grid-column: auto !important;
+  }
+
+  .page-content {
+    gap: 16px !important;
+  }
+
+  header .badge-header {
+    font-size: 0.85rem;
+    padding: 6px 10px;
+  }
+
+  .notif-dropdown {
+    width: min(360px, calc(100vw - 24px)) !important;
+    right: 0 !important;
+    left: auto !important;
+  }
+}
+
+body.mobile-layout .kpi-grid-admin,
+body.mobile-layout .module-grid,
+body.mobile-layout .chart-grid,
+body.mobile-layout .kpi-grid,
+body.mobile-layout .stats-grid,
+body.mobile-layout .grid-2,
+body.mobile-layout .grid-3,
+body.mobile-layout .form-grid,
+body.mobile-layout .auto-form-grid {
+  grid-template-columns: 1fr !important;
+}
+
+body.mobile-layout .chart-span-two {
+  grid-column: auto !important;
+}
+
+body.mobile-layout .main-content {
+  padding: 12px !important;
+  gap: 12px !important;
+}
+
+body.mobile-layout .page-content {
+  gap: 14px !important;
+}
+
+body.mobile-layout .kpi-card,
+body.mobile-layout .module-card,
+body.mobile-layout .chart-wrap,
+body.mobile-layout .card,
+body.mobile-layout .panel {
+  padding: 14px !important;
+}
+
+body.mobile-layout .kpi-value,
+body.mobile-layout .kpi-body strong {
+  font-size: 1.5rem !important;
+}
+
+body.mobile-layout .notif-dropdown {
+  width: min(360px, calc(100vw - 16px)) !important;
+  right: 8px !important;
+  left: auto !important;
+}
+
+@media (max-width: 768px) {
+  .kpi-card,
+  .module-card,
+  .chart-wrap {
+    padding: 16px !important;
+  }
+
+  .kpi-value {
+    font-size: 1.6rem !important;
+  }
+
+  .module-title {
+    font-size: 1.05rem !important;
+  }
+
+  .module-desc {
+    font-size: 0.8rem !important;
+  }
+
+  .chart-size-default,
+  .chart-size-line {
+    height: 260px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .kpi-icon {
+    width: 52px !important;
+    height: 52px !important;
+    font-size: 1.45rem !important;
+  }
+
+  .notif-dropdown {
+    width: calc(100vw - 16px) !important;
+  }
+}
